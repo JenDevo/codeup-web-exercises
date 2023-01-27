@@ -15,10 +15,9 @@
 
 do{
     var allCones = Math.floor(Math.random() * 50) + 50;
+    // This expression will generate a random number between 1 and 5
     var customerPurchase = Math.floor(Math.random() * 5) + 1;
     console.log("The ice cream seller must sell a total of " + allCones + " cones today.");
-    // This expression will generate a random number between 1 and 5
-
 
     if(customerPurchase < allCones){
         console.log(customerPurchase + " sold");
@@ -31,4 +30,4 @@ do{
         break;
     }
     ++allCones;
-} while (allCones > 100);
+} while (allCones > 50);
