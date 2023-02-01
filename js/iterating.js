@@ -54,20 +54,21 @@ let names = ['Amy', 'Tehya', 'Reese', 'Easton'];
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-  let numbers = ([1, 2, 3, 4, 5]);
-  function first(x){
-      return console.log(x[0]);
+  var numbers = ([1, 2, 3, 4, 5]);
+  function first(array){
+      return console.log(array[0]);
   }
+    first(numbers);
 
-  function second(x){
-      return console.log(x[1]);
+    function second(array){
+      return console.log(array[1]);
   }
-  function last(x){
-      return console.log(x[4]);
+    second(numbers);
+
+    function last(array){
+      return console.log(array[4]);
     }
 
-  first(numbers);
-  second(numbers);
   last(numbers);
 
 })();
