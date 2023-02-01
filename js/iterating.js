@@ -54,7 +54,7 @@ let names = ['Amy', 'Tehya', 'Reese', 'Easton'];
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-  var numbers = ([1, 2, 3, 4, 5]);
+  let numbers = ([1, 2, 3, 4, 5]);
   function first(x){
       return console.log(x[0]);
   }
