@@ -66,7 +66,7 @@ let names = ['Amy', 'Tehya', 'Reese', 'Easton'];
     second(numbers);
 
     function last(array){
-      return console.log(array[4]);
+      return console.log(array.length -1);
     }
 
   last(numbers);
