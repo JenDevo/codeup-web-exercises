@@ -32,6 +32,8 @@
     planetsArray.unshift('<ul>');
     planetsArray.push('</ul>')
     console.log(planetsArray);
+
+    console.log("---------------------");
     var planetsStringEdit = planetsArray.join('<li>')
     console.log(planetsStringEdit);
 
