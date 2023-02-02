@@ -11,6 +11,15 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
+    console.log("TODO #1----------");
+
+    var person = {
+        firstName: "Jenna",
+        lastName: "Devora"
+    };
+
+    console.log("Property: firstName of the object: person is > " + person.firstName);
+    console.log("Property: lastName of the object: person is > " + person.lastName);
 
     /**
      * TODO:
@@ -21,6 +30,13 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+    console.log("TODO #2----------");
+
+    person.sayHello = function () {
+        console.log("Hello from " + this.firstName + " " + this.lastName);
+    };
+
+    person.sayHello();
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -35,12 +51,23 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
+    console.log("TODO #3----------");
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    // Wouldn't work at first until "} else{}" was inputted into the if function.
+    // I was original trying to console log the no discount response on its own.
+ shoppers.forEach(function (x) {
+     if (x.amount >= 200) {
+         console.log(x.name + " spent " + x.amount + ". " + "Yayy! A 12% discount will be applied!");
+     } else {
+     console.log(x.name + " spent " + x.amount + ". " + "No discount will be applied.");
+    }
+ });
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,7 +81,7 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-
+    console.log("TODO #4----------");
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -79,7 +106,7 @@
      *      ---
      *      ...
      */
-
+    console.log("TODO #5----------");
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -90,5 +117,5 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-
+    console.log("TODO Bonus----------");
 })();
