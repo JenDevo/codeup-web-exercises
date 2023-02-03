@@ -1,4 +1,4 @@
-(function() {
+(function () {
     "use strict";
 
     /**
@@ -13,7 +13,7 @@
      */
     console.log("TODO #1----------");
 
-    var person = {
+    const person = {
         firstName: "Jenna",
         lastName: "Devora"
     };
@@ -54,7 +54,7 @@
      */
     console.log('----------------------');
     console.log("TODO #3----------");
-    var shoppers = [
+    const shoppers = [
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
@@ -62,13 +62,14 @@
 
     // Wouldn't work at first until "} else{}" was inputted into the if function.
     // I was original trying to console log the no discount response on its own.
- shoppers.forEach(function (input) {
-     if (input.amount >= 200) {
-         console.log(input.name + " spent " + input.amount + ". " + "Yayy! A 12% discount will be applied!");
-     } else {
-     console.log(input.name + " spent " + input.amount + ". " + "No discount will be applied.");
-    }
- });
+    shoppers.forEach(function (shopper) {
+        console.log("The shopper " + shopper.name + " has spent $" + shopper.amount);
+        if (shopper.amount >= 200) {
+            console.log(shopper.name + " spent " + shopper.amount + ". " + "Yayy! A 12% discount will be applied!");
+        } else {
+            console.log(shopper.name + " spent " + shopper.amount + ". " + "No discount will be applied.");
+        }
+    });
 
 
     /** TODO:
@@ -85,24 +86,53 @@
      */
     console.log('----------------------');
     console.log("TODO #4----------");
-    var books = [
-        {title:'1984', author: {firstName:"George", lastName:"Orwell"}},
-        {title:'The Hunger Games', author: {firstName:"Suzanne", lastName:"Collins"}},
-        {title:'Catch 22', author: {firstName:"Joseph", lastName:"Heller"}},
-        {title:'Dune', author:{firstName:"Frank", lastName:"Herbert"}},
-        {title:'Slaughterhouse 5', author:{firstName:"Kurt", lastName:"Vonnegut"}}
+    const books = [
+        {
+            title: '1984',
+            author: {
+                firstName: "George",
+                lastName: "Orwell"
+            }
+        },
+        {
+            title: 'The Hunger Games',
+            author: {
+                firstName: "Suzanne",
+                lastName: "Collins"
+            }
+        },
+        {
+            title: 'Catch 22',
+            author: {
+                firstName: "Joseph",
+                lastName: "Heller"
+            }
+        },
+        {
+            title: 'Dune',
+            author: {
+                firstName: "Frank",
+                lastName: "Herbert"
+            }
+        },
+        {
+            title: 'Slaughterhouse 5',
+            author: {
+                firstName: "Kurt",
+                lastName: "Vonnegut"
+            }
+        }
     ];
 
     console.log("- " + books[0].title);
     console.log(books[0].author.firstName);
     console.log(books[0].author.lastName);
-    console.log("- " + books[1].title);
-    console.log(books[1].author.firstName);
-    console.log(books[1].author.lastName);
-    console.log("- " + books[2].title);
-    console.log(books[2].author.firstName);
-    console.log(books[2].author.lastName);
-
+    // console.log("- " + books[1].title);
+    // console.log(books[1].author.firstName);
+    // console.log(books[1].author.lastName);
+    // console.log("- " + books[2].title);
+    // console.log(books[2].author.firstName);
+    // console.log(books[2].author.lastName);
 
     /**
      * TODO:
@@ -130,10 +160,10 @@
      */
     console.log('----------------------');
     console.log("TODO #5----------");
-    books.forEach(function(bookList){
-        console.log("Book # " + (books.indexOf(bookList)));
-        console.log("Title: " + bookList.title);
-        console.log("Author: " + bookList.author.firstName + " " + bookList.author.lastName);
+    books.forEach(function (book) {
+        console.log("Book # " + (books.indexOf(book)));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
     });
 
     /**
@@ -148,25 +178,27 @@
      */
     console.log('----------------------');
     console.log("TODO Bonus----------");
-    function createBook(title, first, last){
+
+    function createBook(title, first, last) {
         return {
-                title: title,
-                author: {
-                    firstName: first,
-                    lastName: last
-                }
+            title: title,
+            author: {
+                firstName: first,
+                lastName: last
             }
+        }
     }
-    var bookArray = [
+
+    const bookArray = [
         createBook('1984', "George", "Orwell"),
         createBook('The Hunger Games', "Suzanne", "Collins"),
-        createBook ('Catch 22', "Joseph", "Heller"),
-        createBook('Dune',"Frank", "Herbert"),
+        createBook('Catch 22', "Joseph", "Heller"),
+        createBook('Dune', "Frank", "Herbert"),
         createBook('Slaughterhouse 5', "Kurt", "Vonnegut")
-    ]
+    ];
     console.log(bookArray);
 
-    bookArray.forEach(function (showBookInfo){
+    bookArray.forEach(function (showBookInfo) {
         console.log("Book # " + (bookArray.indexOf(showBookInfo)))
         console.log("Title: " + showBookInfo.title)
         console.log("Author: " + showBookInfo.author.firstName + " " + showBookInfo.author.lastName)
