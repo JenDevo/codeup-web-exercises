@@ -90,10 +90,7 @@
         {title:'Slaughterhouse 5', author:{firstName:"Kurt", lastName:"Vonnegut"}}
     ];
 
-    books.forEach(function(bookList){
-    console.log(bookList.title);
-    console.log(bookList.author);
-    });
+
 
     /**
      * TODO:
@@ -119,7 +116,14 @@
      *      ---
      *      ...
      */
+    //WHAT IS HAPPENINGGGGGGG
     console.log("TODO #5----------");
+    books.forEach(function(bookList){
+        console.log("Book # " + books.indexOf(this.title))
+        console.log("Title: " + bookList.title);
+        console.log("Author: " + bookList.author);
+    });
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
