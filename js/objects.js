@@ -82,6 +82,19 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
     console.log("TODO #4----------");
+    var books = [
+        {title:'1984', author: {firstName:"George", lastName:"Orwell"}},
+        {title:'The Hunger Games', author: {firstName:"Suzanne", lastName:"Collins"}},
+        {title:'Catch 22', author: {firstName:"Joseph", lastName:"Heller"}},
+        {title:'Dune', author:{firstName:"Frank", lastName:"Herbert"}},
+        {title:'Slaughterhouse 5', author:{firstName:"Kurt", lastName:"Vonnegut"}}
+    ];
+
+    books.forEach(function(bookList){
+    console.log(bookList.title);
+    console.log(bookList.author);
+    });
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
