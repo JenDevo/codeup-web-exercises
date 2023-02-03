@@ -30,6 +30,7 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+    console.log('----------------------');
     console.log("TODO #2----------");
 
     person.sayHello = function () {
@@ -51,6 +52,7 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
+    console.log('----------------------');
     console.log("TODO #3----------");
     var shoppers = [
         {name: 'Cameron', amount: 180},
@@ -60,11 +62,11 @@
 
     // Wouldn't work at first until "} else{}" was inputted into the if function.
     // I was original trying to console log the no discount response on its own.
- shoppers.forEach(function (x) {
-     if (x.amount >= 200) {
-         console.log(x.name + " spent " + x.amount + ". " + "Yayy! A 12% discount will be applied!");
+ shoppers.forEach(function (input) {
+     if (input.amount >= 200) {
+         console.log(input.name + " spent " + input.amount + ". " + "Yayy! A 12% discount will be applied!");
      } else {
-     console.log(x.name + " spent " + x.amount + ". " + "No discount will be applied.");
+     console.log(input.name + " spent " + input.amount + ". " + "No discount will be applied.");
     }
  });
 
@@ -81,6 +83,7 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    console.log('----------------------');
     console.log("TODO #4----------");
     var books = [
         {title:'1984', author: {firstName:"George", lastName:"Orwell"}},
@@ -90,6 +93,15 @@
         {title:'Slaughterhouse 5', author:{firstName:"Kurt", lastName:"Vonnegut"}}
     ];
 
+    console.log("- " + books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
+    console.log("- " + books[1].title);
+    console.log(books[1].author.firstName);
+    console.log(books[1].author.lastName);
+    console.log("- " + books[2].title);
+    console.log(books[2].author.firstName);
+    console.log(books[2].author.lastName);
 
 
     /**
@@ -116,12 +128,12 @@
      *      ---
      *      ...
      */
-    //WHAT IS HAPPENINGGGGGGG
+    console.log('----------------------');
     console.log("TODO #5----------");
     books.forEach(function(bookList){
-        console.log("Book # " + books.indexOf(this.title))
+        console.log("Book # " + (books.indexOf(bookList)));
         console.log("Title: " + bookList.title);
-        console.log("Author: " + bookList.author);
+        console.log("Author: " + bookList.author.firstName + " " + bookList.author.lastName);
     });
 
     /**
@@ -134,5 +146,29 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    console.log('----------------------');
     console.log("TODO Bonus----------");
+    function createBook(title, first, last){
+        return {
+                title: title,
+                author: {
+                    firstName: first,
+                    lastName: last
+                }
+            }
+    }
+    var bookArray = [
+        createBook('1984', "George", "Orwell"),
+        createBook('The Hunger Games', "Suzanne", "Collins"),
+        createBook ('Catch 22', "Joseph", "Heller"),
+        createBook('Dune',"Frank", "Herbert"),
+        createBook('Slaughterhouse 5', "Kurt", "Vonnegut")
+    ]
+    console.log(bookArray);
+
+    bookArray.forEach(function (showBookInfo){
+        console.log("Book # " + (bookArray.indexOf(showBookInfo)))
+        console.log("Title: " + showBookInfo.title)
+        console.log("Author: " + showBookInfo.author.firstName + " " + showBookInfo.author.lastName)
+    });
 })();
