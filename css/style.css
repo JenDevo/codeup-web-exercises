@@ -1,6 +1,9 @@
 *{
     background-color: #f5f5dc;
-    background-image: url(/imgFile/pinkBackground.jpg);
+    background-image: url(../imgFile/pinkBackground.jpg);
+    background-size: 85px 85px;
+    background-repeat: repeat-x;
+    font-family: "Courier New", serif;
 }
 
 .fancy-header{
@@ -14,4 +17,38 @@ h2 {
 
 h1{
     text-align: center;
+}
+
+ul{
+    list-style: square;
+}
+
+ol{
+    list-style: upper-alpha;
+}
+
+th {
+    padding:10px;
+    font-size: medium;
+}
+
+tr, td {
+    padding: 10px;
+    font-size: small;
+}
+
+a:link{
+    color: #800080;
+}
+
+a:hover{
+ color: #adff2f;
+}
+
+a:visited{
+ color: #00008b;
+}
+
+a:active{
+    color: #daa520;
 }
