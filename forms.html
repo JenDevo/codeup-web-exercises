@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
+
     <meta charset="UTF-8">
     <title>Register With Us</title>
+
 </head>
 <body>
+
 <form method="POST" action="https://requestinspector.com/inspect/01grpg2zkx3pj1j7rjt830rzd5">
-   <h1>Regitster With Us!</h1>
+
+    <h1>Regitster With Us!</h1>
+
     <label for="email">Email Address</label>
-    <input type="text" id="email" name="email">
+    <input type="text" id="email" name="email" placeholder="janedoe13@gmail.com">
+
     <br>
+
     <label for="password">Password</label>
-    <input type="password" name="password" id="password">
+    <input type="password" name="password" id="password" placeholder="**********">
 
     <hr>
+
     <label for="bio">Biography:</label>
-    <textarea name="bio" id="bio"></textarea>
+    <textarea name="bio" id="bio" placeholder="Enter your bio here!"></textarea>
+
     <hr>
+
     <h3>How did you hear about us?</h3>
-    Billboard <input type="radio" name="heardFrom" value="billboard"><br>
-    Radio Advertisement <input type="radio" name="heardFrom" value="radio advertisement"><br>
-    Internet Advertisement <input type="radio" name="heardFrom" value="internet advertisement"><br>
-    Other <input type="radio" name="heardFrom" value="other"><br>
-  <hr>
+
+    <label for="billboard"></label>
+    <input id="billboard" type="checkbox" name="heardFrom" value="billboard"> Billboard <br>
+
+    <label for="radio advertisement"></label>
+    <input id="radio advertisement" type="checkbox" name="heardFrom" value="radio advertisement"> Radio Ad <br>
+
+    <label for="internet advertisement"></label>
+    <input id="internet advertisement" type="checkbox" name="heardFrom" value="internet advertisement"> Internet Ad <br>
+
+    <label for="other"></label>
+    <input id="other" type="checkbox"  name="heardFrom" value="other"> Other <br>
+
+    <hr>
+
     <h3>What browser do you use?</h3>
-    <select name="browser">
+
+    <label for="browser"></label>
+    <select id="browser" name="browser">
         <option value="Safari">Safari</option>
         <option value="Google chrome">Google Chrome</option>
         <option value="Firefox">Firefox</option>
@@ -32,7 +54,7 @@
         <option value="other">Other</option>
     </select>
 
-    <input type="submit">
+    <button type="submit">Submit</button>
 </form>
 </body>
 </html>
