@@ -1,8 +1,17 @@
+*{
+    background-color: #f5f5dc;
+    background-image: url(/imgFile/pinkBackground.jpg);
+}
+
 .fancy-header{
     color:purple;
     text-decoration: underline;
 }
 
-.sub-heading{
-    color:deeppink;
+h2 {
+    text-decoration: underline; color: #FF1493;
+}
+
+h1{
+    text-align: center;
 }
