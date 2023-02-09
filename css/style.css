@@ -30,11 +30,13 @@ ol{
 th {
     padding:10px;
     font-size: medium;
+    border: 1px solid black;
 }
 
 tr, td {
     padding: 10px;
     font-size: small;
+    border: 1px solid black;
 }
 
 a:link{
