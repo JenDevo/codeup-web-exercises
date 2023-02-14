@@ -27,6 +27,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .flex-form {
@@ -36,7 +37,7 @@ body {
     border-radius: 5px;
     /* TODO: Add an automatic margin and a flex container to this selector */
     display: flex;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .flex-form > * {
