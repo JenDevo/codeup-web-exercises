@@ -65,7 +65,7 @@ body {
     flex-basis: 15em;
 }
 
-/*Found this on google as a potential solution*/
+/*Found this on google as a potential solution for removing the date selector*/
 input[type="date"]::-webkit-calendar-picker-indicator{
     display: none;
     -webkit-appearance: none;
