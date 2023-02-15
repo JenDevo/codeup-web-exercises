@@ -1,0 +1,53 @@
+@media screen and (max-width: 767px) {
+    * {
+        padding: .5em;
+        margin: auto;
+    }
+    body {
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        font-family: sans-serif;
+    }
+    ul {
+        list-style: none;
+    }
+    li {
+        margin: 1em;
+        width: auto;
+        background-color: lightgrey;
+        text-align: center;
+    }
+    h1 {
+        display: flex;
+        justify-content: center;
+    }
+    h2 {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    img {
+        width: 100%;
+        display: flex;
+    }
+    .alert-info.hidden-on-desktop {
+        display: flex;
+        justify-content: center;
+        background-color: rgba(150, 243, 246, 0.65);
+        border: 2px solid darkgrey;
+        text-decoration: none;
+    }
+    div.alert-info > a {
+        color: black;
+        text-decoration: none;
+    }
+    section.sub-section {
+        font-style: italic;
+        font-size: medium;
+    }
+   footer{
+       display: flex;
+   }
+}
+
