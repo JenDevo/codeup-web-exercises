@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/custom.css">
     <title>Pizza World</title>
 </head>
 <body>
@@ -33,9 +33,183 @@ and "menu" to left of search box-->
         <a class="navbar-brand text-black fs-6 mx-2" href="#">Sign Up!</a>
     </div>
 </nav>
+
+
 <!--...-->
 <!--Below is the container for the rest of the pizza page -->
-<div class="d-flex">
+<div class="container">
+    <div class="jumbotron p-0 d-none d-md-flex">
+        <div class="w-100 p-1 bg-white bg-opacity-50 d-md-block my-auto mx-auto">
+            <h2>Welcome to Pizza World!</h2>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h2>Build your own Pizza!</h2>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="size-tab" data-bs-toggle="tab" data-bs-target="#size" type="button"
+                    role="tab" aria-controls="size" aria-selected="true">
+                <span class="badge bg-secondary rounded-circle">1</span> Size and Crust
+            </button>
+        </li>
+
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="cheese-tab" data-bs-toggle="tab" data-bs-target="#cheese" type="button"
+                    role="tab" aria-controls="cheese" aria-selected="false">
+                <span class="badge bg-secondary rounded-circle">2</span> Cheese and Sauce
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="topping-tab" data-bs-toggle="tab" data-bs-target="#topping" type="button"
+                    role="tab" aria-controls="topping" aria-selected="false">
+                <span class="badge bg-secondary rounded-circle">3</span>Toppings
+            </button>
+        </li>
+    </ul>
+    <!--End of first tab-->
+    <div class="tab-content">
+        <div class="card tab-pane active" id="size" role="tabpanel" aria-labelledby="size-tab">
+            <div class="list-group border-white">
+                <div class="bg-primary rounded-top">
+                    <p class="text-white m-2">Choose Size and Crust</p>
+                </div>
+                <div class="card card-body border-white">
+                    <label class="list-group-item bg-light">Hand Tossed</label>
+                    <label class="list-group-item">Garlic seasoned crust with a rich, buttery taste</label>
+                    <label class="list-group-item">
+                        <input class="form-check-input" type="radio" id="Hand-Small" name="crust-size"
+                               value='Hand-Small (10")'>
+                        Small (10")
+                    </label>
+                    <label class="list-group-item">
+                        <input class="form-check-input" type="radio" id="Hand-Medium" name="crust-size"
+                               value='Hand-Medium'>
+                        Medium (12")
+                    </label>
+                </div>
+            </div>
+
+            <div class="card card-body border-white">
+                <div class="list-group border-white">
+                    <label class="list-group-item bg-light">
+                        Crispy Thin
+                    </label>
+                    <label class="list-group-item">
+                        This enough for optimum crispy to crunch ratio.
+                    </label>
+                    <label class="list-group-item">
+                        <input class="form-check-input" type="radio" id="Crispy-Medium" name="crust-size"
+                               value='Crispy-Medium (12")'>
+                        Medium (10")
+                    </label>
+                    <label class="list-group-item">
+                        <input class="form-check-input" type="radio" id="Crispy-Large" name="crust-size"
+                               value='Crispy-Large (14")'>
+                        Large (14")
+                    </label>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end bg-light">
+                <a class="btn btn-primary text-white rounded border-0 m-2" type="button">
+                    Next Step
+                </a>
+            </div>
+        </div>
+
+        <div class="card tab-pane" id="cheese" role="tabpanel" aria-labelledby="cheese-tab">
+            <div class="list-group border-white">
+                <div class="bg-primary rounded-top">
+                    <p class="text-white m-2">Choose Cheese and Sauce</p>
+                </div>
+                <div class="card-body">
+                    <label class="list-group-item d-flex">
+                        How Much?
+                    </label>
+                    <div class="card">
+                        <div class="card-body"
+                             style="height: 30px; padding: .5rem 1rem .5rem 1rem; margin-bottom: 1.5em;">
+                            <select class="form-select list-group-item rounded" style="height: 38px">
+                                <
+                                <option value="Light">Light</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Extra">Extra</option>
+                                <option value="Double">Double</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card card-body border-white">
+            <label class="list-group-item bg-light">
+                Sauce
+            </label>
+            <label class="list-group-item">
+                What Type?
+            </label>
+            <div class="card">
+                <div class="card-body" style="height: 30px; padding: .5rem 1rem .5rem 1rem; margin-bottom: 1.5em;">
+                    <select class="form-select list-group-item rounded" style="height: 38px">
+                        <option value="Tomato">Tomato</option>
+                        <option value="Marinara">Marinara</option>
+                        <option value="BBQ">BBQ</option>
+                        <option value="Alfredo">Alfredo</option>
+                    </select>
+                </div>
+            </div>
+            <label class="list-group-item">How Much?</label>
+            <div class="card">
+                <div class="card-body" style="height: 30px; padding: .5rem 1rem .5rem 1rem; margin-bottom: 1.5em;">
+                    <select class="form-select list-group-item rounded" style="height: 38px;">
+                        <option value="Light">Light</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Extra">Extra</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end bg-light">
+            <div class="btn-group m-2" role="group">
+                <a type="button" class="btn btn-primary">Previous</a>
+                <a type="button" class="btn btn-primary">Next</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card tab-pane" id="topping" role="tabpanel" aria-labelledby="topping-tab">
+        <div class="list-group">
+            <div class="bg-primary rounded-top">
+                <p class="text-white m-2">Toppings</p>
+            </div>
+            <div class="card card-body border-white">
+                <form action="https://request-inspector.glitch.me/" method="POST">
+                    <label class="list-group-item bg-light">Choose Meats</label>
+                    <label class="list-group-item">
+                        <input class="form-check-input" type="checkbox" name="toppings" value="beef">
+                        Beef
+                    </label>
+                    <label class="list-group-item">
+                        <input class="form-check-input" type="checkbox" name="toppings" value="ham">
+                        Ham
+                    </label>
+                    <label class="list-group-item">
+                        <input class="form-check-input" type="checkbox" name="toppings" value="philly steak">Philly
+                        Steak
+                    </label>
+                    <label class="list-group-item">
+                        <input class="form-check-input" type="checkbox" name="toppings" value="bacon">
+                        Bacon
+                    </label>
+                </form>
+                <br>
+
+            </div>
+        </div>
+    </div>
 
 </div>
 <!-- Optional JavaScript; choose one of the two! -->
