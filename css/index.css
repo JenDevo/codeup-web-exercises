@@ -8,3 +8,9 @@ a {
 h1 {
     font-family: "Trispace", sans-serif;
 }
+
+hr {
+    padding: .15em;
+    color: #69853b;
+    opacity: 75%;
+}
