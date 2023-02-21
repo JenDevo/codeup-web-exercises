@@ -35,12 +35,10 @@ and "menu" to left of search box-->
 </nav>
 
 
-<!--...-->
-<!--Below is the container for the rest of the pizza page -->
 <div class="container">
     <div class="jumbotron p-0 d-none d-md-flex">
         <div class="w-100 p-1 bg-white bg-opacity-50 d-md-block my-auto mx-auto">
-            <h2>Welcome to Pizza World!</h2>
+            <h2 class="text-center">Welcome to Pizza World!</h2>
         </div>
     </div>
     <br>
@@ -68,7 +66,7 @@ and "menu" to left of search box-->
             </button>
         </li>
     </ul>
-    <!--End of first tab-->
+
     <div class="tab-content">
         <div class="card tab-pane active" id="size" role="tabpanel" aria-labelledby="size-tab">
             <div class="list-group border-white">
@@ -77,7 +75,9 @@ and "menu" to left of search box-->
                 </div>
                 <div class="card card-body border-white">
                     <label class="list-group-item bg-light">Hand Tossed</label>
-                    <label class="list-group-item">Garlic seasoned crust with a rich, buttery taste</label>
+                    <label class="list-group-item">
+                        Garlic seasoned crust with a rich, buttery taste
+                    </label>
                     <label class="list-group-item">
                         <input class="form-check-input" type="radio" id="Hand-Small" name="crust-size"
                                value='Hand-Small (10")'>
@@ -122,95 +122,144 @@ and "menu" to left of search box-->
         <div class="card tab-pane" id="cheese" role="tabpanel" aria-labelledby="cheese-tab">
             <div class="list-group border-white">
                 <div class="bg-primary rounded-top">
-                    <p class="text-white m-2">Choose Cheese and Sauce</p>
+                    <p class="text-white m-2">
+                        Choose Cheese and Sauce
+                    </p>
                 </div>
-                <div class="card-body">
-                    <label class="list-group-item d-flex">
-                        How Much?
-                    </label>
-                    <div class="card">
-                        <div class="card-body"
-                             style="height: 30px; padding: .5rem 1rem .5rem 1rem; margin-bottom: 1.5em;">
-                            <select class="form-select list-group-item rounded" style="height: 38px">
-                                <
-                                <option value="Light">Light</option>
-                                <option value="Normal">Normal</option>
-                                <option value="Extra">Extra</option>
-                                <option value="Double">Double</option>
-                            </select>
+                <div class="card border-white">
+                    <div class="card-body">
+                        <label class="list-group-item bg-light">
+                            Cheese
+                        </label>
+                        <label class="list-group-item d-flex">
+                            How Much?
+                        </label>
+                        <div class="card">
+                            <div class="card-body"
+                                 style="height: 30px; padding: .5rem 1rem .5rem 1rem; margin-bottom: 1.5em;">
+                                <select class="form-select list-group-item rounded" style="height: 38px">
+                                    <option value="Light">Light</option>
+                                    <option value="Normal" selected> Normal</option>
+                                    <option value="Extra">Extra</option>
+                                    <option value="Double">Double</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-        <div class="card card-body border-white">
-            <label class="list-group-item bg-light">
-                Sauce
-            </label>
-            <label class="list-group-item">
-                What Type?
-            </label>
-            <div class="card">
-                <div class="card-body" style="height: 30px; padding: .5rem 1rem .5rem 1rem; margin-bottom: 1.5em;">
-                    <select class="form-select list-group-item rounded" style="height: 38px">
-                        <option value="Tomato">Tomato</option>
-                        <option value="Marinara">Marinara</option>
-                        <option value="BBQ">BBQ</option>
-                        <option value="Alfredo">Alfredo</option>
-                    </select>
-                </div>
-            </div>
-            <label class="list-group-item">How Much?</label>
-            <div class="card">
-                <div class="card-body" style="height: 30px; padding: .5rem 1rem .5rem 1rem; margin-bottom: 1.5em;">
-                    <select class="form-select list-group-item rounded" style="height: 38px;">
-                        <option value="Light">Light</option>
-                        <option value="Normal">Normal</option>
-                        <option value="Extra">Extra</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="d-flex justify-content-end bg-light">
-            <div class="btn-group m-2" role="group">
-                <a type="button" class="btn btn-primary">Previous</a>
-                <a type="button" class="btn btn-primary">Next</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="card tab-pane" id="topping" role="tabpanel" aria-labelledby="topping-tab">
-        <div class="list-group">
-            <div class="bg-primary rounded-top">
-                <p class="text-white m-2">Toppings</p>
             </div>
             <div class="card card-body border-white">
-                <form action="https://request-inspector.glitch.me/" method="POST">
-                    <label class="list-group-item bg-light">Choose Meats</label>
-                    <label class="list-group-item">
-                        <input class="form-check-input" type="checkbox" name="toppings" value="beef">
-                        Beef
-                    </label>
-                    <label class="list-group-item">
-                        <input class="form-check-input" type="checkbox" name="toppings" value="ham">
-                        Ham
-                    </label>
-                    <label class="list-group-item">
-                        <input class="form-check-input" type="checkbox" name="toppings" value="philly steak">Philly
-                        Steak
-                    </label>
-                    <label class="list-group-item">
-                        <input class="form-check-input" type="checkbox" name="toppings" value="bacon">
-                        Bacon
-                    </label>
-                </form>
-                <br>
-
+                <label class="list-group-item bg-light">
+                    Sauce
+                </label>
+                <label class="list-group-item">
+                    What Type?
+                </label>
+                <div class="card">
+                    <div class="card-body" style="height: 30px; padding: .5rem 1rem .5rem 1rem; margin-bottom: 1.5em;">
+                        <select class="form-select list-group-item rounded" style="height: 38px">
+                            <option value="Tomato">Tomato</option>
+                            <option value="Marinara">Marinara</option>
+                            <option value="BBQ">BBQ</option>
+                            <option value="Alfredo">Alfredo</option>
+                        </select>
+                    </div>
+                </div>
+                <label class="list-group-item">
+                    How Much?
+                </label>
+                <div class="card">
+                    <div class="card-body" style="height: 30px; padding: .5rem 1rem .5rem 1rem; margin-bottom: 1.5em;">
+                        <select class="form-select list-group-item rounded" style="height: 38px;">
+                            <option value="Light">Light</option>
+                            <option value="Normal" selected>Normal</option>
+                            <option value="Extra">Extra</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end bg-light">
+                <div class="btn-group m-2" role="group">
+                    <a type="button" class="btn btn-primary">< Previous</a>
+                    <a type="button" class="btn btn-primary">Next ></a>
+                </div>
             </div>
         </div>
-    </div>
 
+        <div class="card tab-pane" id="topping" role="tabpanel" aria-labelledby="topping-tab">
+            <div class="list-group">
+                <div class="bg-primary rounded-top">
+                    <p class="text-white m-2">
+                        Toppings
+                    </p>
+                </div>
+                <div class="card card-body border-white">
+                    <form action="https://request-inspector.glitch.me/" method="POST">
+                        <label class="list-group-item bg-light">Choose Meats</label>
+                        <label class="list-group-item">
+                            <input class="form-check-input" type="checkbox" name="toppings" value="beef">
+                            Beef
+                        </label>
+                        <label class="list-group-item">
+                            <input class="form-check-input" type="checkbox" name="toppings" value="ham">
+                            Ham
+                        </label>
+                        <label class="list-group-item">
+                            <input class="form-check-input" type="checkbox" name="toppings" value="philly steak"> Philly
+                            Steak
+                        </label>
+                        <label class="list-group-item">
+                            <input class="form-check-input" type="checkbox" name="toppings" value="bacon">
+                            Bacon
+                        </label>
+                    </form>
+                    <br>
+                    <form>
+                        <div class="list-group">
+                            <label class="list-group-item bg-light">
+                                Choose Non-Meats
+                            </label>
+                            <label class="list-group-item">
+                                <input class="form-check-input" type="checkbox" name="toppings-non-meat"
+                                       value="green peppers">
+                                Green Peppers
+                            </label>
+                            <label class="list-group-item">
+                                <input class="form-check-input" type="checkbox" name="toppings-non-meat"
+                                       value="mushrooms">
+                                Mushrooms
+                            </label>
+                            <label class="list-group-item">
+                                <input class="form-check-input" type="checkbox" name="toppings-non-meat" value="onions">
+                                Onions
+                            </label>
+                            <label class="list-group-item">
+                                <input class="form-check-input" type="checkbox" name="toppings-non-meat"
+                                       value="jalapeño-peppers">
+                                Jalapeño Peppers
+                            </label>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="d-flex justify-content-end bg-light">
+                    <a class="btn btn-primary text-white rounded border-0 m-2" type="button">
+                        Checkout
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-cart-fill" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                        <span class="icon-wrapper">
+                        <i class="bi bi-cart-fill"></i>
+                    </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 <!-- Optional JavaScript; choose one of the two! -->
 
