@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!-- saved from url=(0061)https://java.codeup.com/examples/javascript/dom-query-js.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -52,11 +53,12 @@
         listItems[0].style.color = "blue";
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName("sub-paragraph");
+        // var subParagraphs = document.getElementsByClassName("sub-paragraph");
+        var subParagraphs  = document.querySelector(".sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-            subParagraphs[0].innerText = "Mission Accomplished!";
-
+        //     subParagraphs[0].innerText = "Mission Accomplished!";
+                subParagraphs.innerHTML = "Mission Accomplished!";
     })();
 </script>
 
