@@ -6,17 +6,17 @@
 </head>
 <body>
 
-<h1 id="heading" class="header-class">Hello jQuery Selectors!</h1>
+<h1 id="heading" class="highlight">Hello jQuery Selectors!</h1>
 
-<p id="paragraph" class="codeup">
+<p id="paragraph" class="highlight">
     I am a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua.
 </p>
 
 <ul id="codeup" class="">
-    <li>Rice</li>
-    <li>Beans</li>
-    <li>Corn</li>
+    <li class="highlight">Rice</li>
+    <li class="highlight">Beans</li>
+    <li class="highlight">Corn</li>
 </ul>
 
 <div id="div" class="codeup">
@@ -52,7 +52,10 @@
     // $('.codeup').css('border', '1px solid red');
 
     //Element Selectors
-    $('li').css('font-size', '20px');
+    // $('li').css('font-size', '20px');
+   var contents = $('li, h1, p').css('background-color', 'yellow').html();
+
+    alert(contents);
 
 </script>
 </body>
