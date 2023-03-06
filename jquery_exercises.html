@@ -6,16 +6,42 @@
 </head>
 <body>
 
+<h1 id="heading" class="header-class">Hello jQuery Selectors!</h1>
+
+<p id="paragraph" class="para-class">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua.
+</p>
+
+<ul id="list" class="list-class">
+    <li>Rice</li>
+    <li>Beans</li>
+    <li>Corn</li>
+</ul>
+
+<div id="div" class="div-class">
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</div>
+
 <!--below is the link from jQuery CDN-->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
 
 <!--Needed to implement js script after jQuery CDN to load library first-->
-<script>$(function () {
-    alert('The DOM has finished loading!');
-});
-</script>
+<!--Commented out the function below, used to alert that the DOM was working-->
 
+<!--<script>$(function () {-->
+<!--    alert('The DOM has finished loading!');-->
+<!--});-->
+<!--</script>-->
+
+<!--Below is the jQuery work for the selectors exercise-->
+
+<!--Below: Alerting contents of the element-->
+<script>
+    var contents = $('#heading').html();
+    alert(contents)
+</script>
 </body>
 </html>
