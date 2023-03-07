@@ -9,7 +9,20 @@
 <h1 id="heading" class="highlight">Hello jQuery Selectors!</h1>
 
 <p id="paragraph" class="highlight">
-    I am a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    I am a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+    labore et dolore magna
+    aliqua.
+</p>
+
+<p id="paragraph2" class="highlight">
+    I am a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+    labore et dolore magna
+    aliqua.
+</p>
+
+<p id="paragraph3" class="highlight">
+    I am a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+    labore et dolore magna
     aliqua.
 </p>
 
@@ -20,7 +33,8 @@
 </ul>
 
 <div id="div" class="codeup">
-    I am a div. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    I am a div. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat.
 </div>
 
 <!--below is the link from jQuery CDN-->
@@ -40,7 +54,7 @@
 
 
 <script>
-<!--    SELECTORS   -->
+    <!--    SELECTORS   -->
     // ID SELECTORS
     // Below: Alerting contents of the element selected
 
@@ -53,9 +67,36 @@
 
     //Element Selectors
     // $('li').css('font-size', '20px');
-   var contents = $('li, h1, p').css('background-color', 'yellow').html();
+    // var contents = $('li, h1, p').css('background-color', 'yellow').html();
+    //
+    //  alert(contents);
 
-    alert(contents);
+
+    // ...
+    // MOUSE EVENTS EXERCISE
+
+    // BELOW: Makes background heading pink when clicked.
+    $('h1').click(function () {
+        $('h1').css('background-color', 'pink')
+    });
+
+    // BELOW: makes all paragraphs have 18px font size when double-clicked.
+    // I used this in the handler function so when I clicked on a different p element only the one clicked would change.
+    $('p').dblclick(function () {
+        $(this).css('font-size', '18px')
+    });
+
+    // BELOW: set list items text to red when hovering.
+    //...reset to black when not hovering.
+    $('li').hover(
+        function() {
+       $(this).css('background-color', '#F00');
+    },
+        function() {
+            $(this).css('background-color', '#000');
+        }
+    );
+
 
 </script>
 </body>
