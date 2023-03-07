@@ -1,20 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Konami Code</title>
 </head>
 <body>
-    <h1>Konami Code</h1>
+<h1>Konami Code</h1>
 
-    <script src="js/jquery.js"></script>
-    <script>
-        "use strict";
+<!--jQuery script pulled from https://releases.jquery.com/jquery/-->
 
-        $(document).keyup(function (event) {
-            console.log(event.keyup);
-        });
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script>
+    "use strict";
+    //BELOW: an object holding all the key Codes that should be rendered and their values
+    var keysAllowed = {
+        38: 'up',
+        40: 'down',
+        37: 'left',
+        39: 'right',
+        66: 'b',
+        65: 'a',
+        13: 'return'
+    };
 
-    </script>
+    // BELOW: Array of key presses needed to trigger konami style.
+    var konamiPassword = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'return']
+
+    console.log(konamiPassword);
+    console.log(keysAllowed);
+
+    //BELOW:
+    $(document).keyup(function (event) {
+            console.log(event.keyCode);
+            //BELOW: variable used to render keys to be focused on with their key codes.
+        var keysPressed = keysAllowed[event.keyCode]
+
+    });
+
+    //BELOW: Used to add effect to document when konami code is activated
+    function konamiStyle() {
+        $('body').css('background-color', '#ffa641')
+        alert('You have added 30 lives!')
+    }
+</script>
 </body>
 </html>
