@@ -1,20 +1,23 @@
 "use strict";
 
-$("dd").addClass('invisible');
+    // BELOW: JS for adding class to element
+    $("dd").addClass('invisible');
 
-    $('#toggle-link').click(function (e) {
+    // hide and reveal specified content when link is clicked
+    $('#toggle-link').click(function () {
         $('dd').toggleClass('invisible')
     });
 
-// CONTENT STYLING
-$('dl')
-    .css('padding', '1em')
-    .css('margin', '1em');
 
-$('dd')
-    .css('padding', '1em')
+    // CONTENT STYLING
+    $('dl')
+        .css('padding', '1em')
+        .css('margin', '1em');
 
-$('dt')
-    .css('font-weight', 'bold');
+    $('dd')
+        .css('padding', '1em')
+
+    $('dt')
+        .css('font-weight', 'bold');
 
 
