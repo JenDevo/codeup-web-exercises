@@ -16,15 +16,13 @@
     var konamiPassword = '3838404037393739666513';
     var userInput = '';
 
-    //BELOW:
+    //BELOW: function that returns the stringed user input to key codes to compare to konami password.
     $(document).keydown(function (e) {
         userInput += e.keyCode;
 
         if (userInput === konamiPassword) {
             alert('You have added 30 lives!');
             $('body').css('background-color', '#ffa641')
-
-
         }
 
     });
