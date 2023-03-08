@@ -13,21 +13,22 @@
 <script>
     "use strict";
 
-   var konamiPassword = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft','ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
+    var konamiPassword = '3838404037393739666513';
     var userInput = '';
 
     //BELOW:
-    $(document).keyup(function (e) {
-        // console.log(event.keyCode)
-        console.log(userInput += e.keyCode);
-        console.log("So far the user has inputted... " + userInput)
+    $(document).keydown(function (e) {
+        userInput += e.keyCode;
+
+        if (userInput === konamiPassword) {
+            alert('You have added 30 lives!');
+            $('body').css('background-color', '#ffa641')
+
+
+        }
+
     });
 
-    //BELOW: Used to add effect to document when konami code is triggered
-    function konamiStyle() {
-        $('body').css('background-color', '#ffa641')
-        alert('You have added 30 lives!')
-    }
 </script>
 </body>
 </html>
