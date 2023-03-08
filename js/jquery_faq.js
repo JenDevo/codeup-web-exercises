@@ -8,6 +8,12 @@
         $('dd').toggleClass('invisible')
     });
 
+    // Below: Adding yellow background when button is clicked
+    $('#yellow-bg').click(function (){
+        $('ul').children().last().css('background-color', 'yellow');
+    });
+
+
 
     // CONTENT STYLING
     $('dl')
