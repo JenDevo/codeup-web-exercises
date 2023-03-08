@@ -2,13 +2,7 @@
 
 $("dd").addClass('invisible');
 
-
-    $('.invisible').css('visibility', 'hidden');
-
-
     $('#toggle-link').click(function (e) {
-
-
         $('dd').toggleClass('invisible')
     });
 
