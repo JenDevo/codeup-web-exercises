@@ -18,10 +18,13 @@
     // BELOW: h3 clicked = lis bolded with font-weight
 
         $('h3').click(function () {
-            $(this).each(function(){
                 $('li').css('font-weight', 'bold');
-            });
         });
+
+// BELOW: clicking on lis turns 1st li blue font
+$('li').click(function (){
+   $('li:first-child').css('color', 'blue') ;
+});
 
 
 
