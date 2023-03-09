@@ -10,8 +10,18 @@
 
     // Below: Adding yellow background when button is clicked
     $('#yellow-bg').click(function (){
-        $('ul').children().last().css('background-color', 'yellow');
+        $('ul').each(function (){
+            $('li:last-child').css('background-color', 'yellow');
+        })
     });
+
+    // BELOW: h3 clicked = lis bolded with font-weight
+
+        $('h3').click(function () {
+            $(this).each(function(){
+                $('li').css('font-weight', 'bold');
+            });
+        });
 
 
 
