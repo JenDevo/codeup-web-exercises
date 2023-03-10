@@ -32,11 +32,19 @@
         "price": 10
     }, {
     "title": "Nail-gun",
-    "quantity": 25,
+    "quantity": 5,
     "categories": [
         "tool",
         "powered"
     ],
     "price": 100
+} , {
+    "title": "Nails",
+    "quantity": 25,
+    "categories": [
+        "tool",
+        "powered"
+    ],
+    "price": 10
 }
 ]

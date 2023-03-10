@@ -21,10 +21,11 @@
 </table>
 
 <!--BELOW: Refresh button-->
-<button type="button" id="refresh">Refresh Data</button>
+<button type="button" id="refresh">Click to see Updated Data</button>
 
 <!--jQuery CDN-->
-<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
 <script>
     (function () {
@@ -35,13 +36,13 @@
             console.log(data);
 
 
-        // TODO: Take the data from inventory.json and append it to the products table
-        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-        //             its contents and fields
-        //       HINT: You will want to target #insertProducts for your new HTML elements
+            // TODO: Take the data from inventory.json and append it to the products table
+            //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+            //             its contents and fields
+            //       HINT: You will want to target #insertProducts for your new HTML elements
 
-            // BELOW: Connects the json file to display in the html table
-            data.forEach(function(tool){
+            // BELOW: Connects the json file to display in the html table with added information to json file
+            data.forEach(function (tool) {
                 html += "<tr id ='table'>"
                     + "<td>" + tool.title + "</td>"
                     + "<td>" + tool.quantity + "</td>"
@@ -50,6 +51,23 @@
                     + "</tr>";
             });
             $("#products").append(html);
+        });
+
+        // BELOW: Created refresh button for refreshing data but not the page, then connect refresh button with data asynchronously
+        $("#refresh").click(function () {
+            $.get("data/inventory.json").done(function (data) {
+                let html = "";
+
+                data.forEach(function (tool) {
+                    html += "<tr id ='table'>"
+                        + "<td>" + tool.title + "</td>"
+                        + "<td>" + tool.quantity + "</td>"
+                        + "<td>" + tool.price + "</td>"
+                        + "<td>" + tool.categories + "</td>"
+                        + "</tr>";
+                });
+                $("#insertProducts").html(html);
+            });
         });
     })();
 </script>
