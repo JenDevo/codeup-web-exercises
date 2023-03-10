@@ -24,33 +24,41 @@
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
         center: [-98.4946, 29.4252], // starting position [lng, lat]
         zoom: 10, // starting zoom
-      });
-
-    // BELOW: geocoding to favorite restaurant
-    geocode("6030 Bandera Rd, San Antonio, TX", myToken).then(function(results){
-      console.log("Geocode result");
-      console.log(results);
-      // BELOW: Map Marker for restaurant
-      let restaurantMarker = new mapboxgl.Marker();
-      restaurantMarker.setLngLat(results);
-      restaurantMarker.addTo(map);
-
-
-      // BELOW: Created var for new zoom to results for browser to interact
-      let myOptionsObj = { center: results, zoom: 16};
-      map.flyTo(myOptionsObj);
-      console.log(myOptionsObj);
-
-    // BELOW: Added popup with restaurant name
-      let myPopup = new mapboxgl.Popup();
-      myPopup.setLngLat(results);
-      myPopup.setHTML("<span>Henry's Puffy Tacos</span>")
-      myPopup.addTo(map);
     });
 
+    // BELOW: geocoding to favorite restaurant
+    geocode("6030 Bandera Rd, San Antonio, TX", myToken).then(function (results) {
+        console.log("Geocode result");
+        console.log(results);
+        // BELOW: Map Marker for restaurant
+        let restaurantMarker = new mapboxgl.Marker();
+        restaurantMarker.setLngLat(results);
+        restaurantMarker.addTo(map);
+
+
+        // BELOW: Created var for new zoom to results for browser to interact
+        let myOptionsObj = {center: results, zoom: 16};
+        map.flyTo(myOptionsObj);
+        console.log(myOptionsObj);
+
+        // BELOW: Added popup with restaurant name
+        //FOLLOWING LINE: This function wraps around popup so popup only displays when clicked
+        map.on('click', () => {
+            let myPopup = new mapboxgl.Popup();
+            myPopup.setLngLat(results);
+            myPopup.setHTML("<span>Henry's Puffy Tacos</span>")
+            myPopup.addTo(map);
+
+            // BELOW: The popup was set to marker so when marker is clicked the popup shows
+            restaurantMarker.setPopup(myPopup);
+        })
+    });
 
 
 </script>
 
+<!--BELOW: jQuery CDN-->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 </body>
 </html>
