@@ -4,24 +4,34 @@
     <meta charset="UTF-8">
     <title>Mapbox API Exercise</title>
 
-<!-- BELOW: Mapbox CDN-->
-  <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- BELOW: Mapbox CDN-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet'/>
 
 
 </head>
 <body>
 
-<!--BELOW: Creates a map and displays in browser-->
+<!--BELOW: Creates a map of San Antonio and displays in browser-->
 <div id='map' style='width: 400px; height: 300px;'></div>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoiamVuZGV2byIsImEiOiJjbGYyeG1icWkwYzc4M3FtbGJvbGdjcjlmIn0.31cS5X1HuxYo_AQMQccwmg';
-  const map = new mapboxgl.Map({
-    container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/streets-v12', // style URL
-    center: [-74.5, 40], // starting position [lng, lat]
-    zoom: 9, // starting zoom
-  });
+    //  BELOW: added API key - Mapbox token
+    var myToken = 'pk.eyJ1IjoiamVuZGV2byIsImEiOiJjbGYyeG1icWkwYzc4M3FtbGJvbGdjcjlmIn0.31cS5X1HuxYo_AQMQccwmg';
+    mapboxgl.accessToken = myToken;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v12', // style URL
+        center: [-98.4946, 29.4252], // starting position [lng, lat]
+        zoom: 9, // starting zoom
+      });
+
+    // BELOW: geocoding to favorite restaurant
+    geocode("Henry's Puffy Tacos, San Antonio, TX", myToken).then(function(results){
+      console.log("Geocode result");
+      console.log(results);
+    })
+
 </script>
 
 </body>
