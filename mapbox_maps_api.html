@@ -23,14 +23,22 @@
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
         center: [-98.4946, 29.4252], // starting position [lng, lat]
-        zoom: 9, // starting zoom
+        zoom: 10, // starting zoom
       });
 
     // BELOW: geocoding to favorite restaurant
-    geocode("Henry's Puffy Tacos, San Antonio, TX", myToken).then(function(results){
+    geocode("6030 Bandera Rd, San Antonio, TX", myToken).then(function(results){
       console.log("Geocode result");
       console.log(results);
-    })
+
+      // BELOW: Map Marker for restaurant
+      let restaurantMarker = new mapboxgl.Marker();
+      restaurantMarker.setLngLat(results);
+      restaurantMarker.addTo(map);
+
+    });
+
+
 
 </script>
 
