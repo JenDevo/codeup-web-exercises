@@ -37,16 +37,20 @@
 
 
         // BELOW: Created var for new zoom to results for browser to interact
-        let myOptionsObj = {center: results, zoom: 16};
-        map.flyTo(myOptionsObj);
-        console.log(myOptionsObj);
+        // LINE BELOW: Added map.on('click') so the entire map of San Antonio shows before zoom to marker
+        map.on('click', () => {
+            let myOptionsObj = {center: results, zoom: 16};
+            map.flyTo(myOptionsObj);
+            console.log(myOptionsObj);
+        });
+
 
         // BELOW: Added popup with restaurant name
         //FOLLOWING LINE: This function wraps around popup so popup only displays when clicked
         map.on('click', () => {
             let myPopup = new mapboxgl.Popup();
             myPopup.setLngLat(results);
-            myPopup.setHTML("<span>Henry's Puffy Tacos</span>")
+            myPopup.setHTML("<span> Henry's Puffy Tacos </span>")
             myPopup.addTo(map);
 
             // BELOW: The popup was set to marker so when marker is clicked the popup shows
