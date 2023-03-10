@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://java.codeup.com/examples/javascript/ajax-store.html -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Online Store</title>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1100.0" data-gr-ext-installed="">
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Categories</th>
+    </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script>
+    (function () {
+        "use strict";
+        // TODO: Create an AJAX GET request for the file under data/inventory.json
+        $.get("/data/inventory.json").done(function (data) {
+            let html = "";
+            console.log((data));
+        });
+
+        // TODO: Take the data from inventory.json and append it to the products table
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements
+
+    })();
+</script>
+
+
+
+
