@@ -35,9 +35,17 @@
       restaurantMarker.setLngLat(results);
       restaurantMarker.addTo(map);
 
+
+      // BELOW: Created var for new zoom to results for browser to interact
       let myOptionsObj = { center: results, zoom: 16};
       map.flyTo(myOptionsObj);
       console.log(myOptionsObj);
+
+    // BELOW: Added popup with restaurant name
+      let myPopup = new mapboxgl.Popup();
+      myPopup.setLngLat(results);
+      myPopup.setHTML("<span>Henry's Puffy Tacos</span>")
+      myPopup.addTo(map);
     });
 
 
