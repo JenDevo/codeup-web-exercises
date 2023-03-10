@@ -20,6 +20,9 @@
     <tbody id="insertProducts"></tbody>
 </table>
 
+<!--BELOW: Refresh button-->
+<button type="button" id="refresh">Refresh Data</button>
+
 <!--jQuery CDN-->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
@@ -30,6 +33,12 @@
         $.get("data/inventory.json").done(function (data) {
             let html = "";
             console.log(data);
+
+
+        // TODO: Take the data from inventory.json and append it to the products table
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements
 
             // BELOW: Connects the json file to display in the html table
             data.forEach(function(tool){
@@ -42,12 +51,6 @@
             });
             $("#products").append(html);
         });
-
-        // TODO: Take the data from inventory.json and append it to the products table
-        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-        //             its contents and fields
-        //       HINT: You will want to target #insertProducts for your new HTML elements
-
     })();
 </script>
 </body>
