@@ -1,17 +1,17 @@
 [
   {
-    "Name": "Silver Linings Eats and Sweets",
-    "coordinates": 25,
+    "name": "Henry's Puffy Tacos",
+    "location": "6030 Bandera Rd, San Antonio, TX",
     "type": "Grill"
   },
   {
-    "Name": "Butterhorn Bakery & Cafe",
-    "coordinates": 5,
+    "name": "Luby's",
+    "location": "803 Castroville Rd, San Antonio, TX",
     "type": "Cafe"
   },
   {
-    "Name": "Tony's Tacos To Go #3",
-    "coordinates": 5,
+    "name": "Tony's Tacos To Go #3",
+    "location": "2203 Nogalitos St, San Antonio, TX",
     "type": "Mexican Restaurant"
   }
 ]
