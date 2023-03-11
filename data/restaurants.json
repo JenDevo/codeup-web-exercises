@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Silver Linings Eats and Sweets",
+    "coordinates": 25,
+    "type": "Grill"
+  },
+  {
+    "Name": "Butterhorn Bakery & Cafe",
+    "coordinates": 5,
+    "type": "Cafe"
+  },
+  {
+    "Name": "Tony's Tacos To Go #3",
+    "coordinates": 5,
+    "type": "Mexican Restaurant"
+  }
+]

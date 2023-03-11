@@ -52,4 +52,3 @@ function reverseGeocode(coordinates, token) {
         });
 }
 
-// BELOW: jQuery
