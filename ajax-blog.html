@@ -8,10 +8,9 @@
 
 
 </head>
-<body>
+<body class="bg-dark">
 
-<div id="posts">
-
+<div id="posts" class="text-white">
 </div>
 
 <!--jQuery CDN-->
@@ -23,11 +22,13 @@
         let html = "";
 
         data.forEach(function (e) {
-            html += "<div>"
-                + "<div>" + e.title + "</div>"
-                + "<div>" + e.content + "</div>"
-                + "<div>" + e.categories + "</div>"
-                + "<div>" + e.date + "</div>"
+            html += "<div class='m-3 p-2'>"
+                + "<h2 class='text-danger bg-warning border border-danger border-2 rounded-top'>" + e.title + "</h2>"
+                + "<div class='p-4'>" + e.content + "</div>" +
+                "<div class='row bg-info mx-1 rounded-pill border border-light'>"
+                + "<span class='col-6 text-dark text-uppercase'>" + e.categories + "</span>"
+                + "<span class='col-6 text-dark d-flex justify-content-end'>" + e.date + "</span>"
+                + "</div>"
                 + "</div>";
         });
         $("#posts").append(html);
