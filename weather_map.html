@@ -21,15 +21,23 @@
     </div>
 </body>
 
-<!--BELOW: Mapbox geocoder-->
-<!--<script src="js/mapbox-geocoder-utils.js"></script>-->
-
 <!--BELOW: jQuery CDN-->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
+
+
+<!--BELOW: Mapbox geocoder-->
+<!--<script src="js/mapbox-geocoder-utils.js"></script>-->
+<!--JS keys with gitignore on this file-->
+<script src="js/keys.js" ></script>
 <script>
 
+<!--    Currently the code below shows for San Antonio, TX-->
+    $.get(`http://api.openweathermap.org/data/2.5/weather?lat=${29.4252}&lon=${-98.4946}&appid=${weatherKey}&units=imperial`).done(function (results){
+        console.log(results);
+    })
 </script>
+
 
 </html>
