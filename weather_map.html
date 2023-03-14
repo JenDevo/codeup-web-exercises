@@ -49,6 +49,7 @@
                     html += `<h4>Date: ${data.list[i].dt_txt}</h4>`
                     html += `<h4>Current Location: ${data.city.name}</h4>`;
                     html += `<h5>High: ${data.list[i].main.temp_max}&deg / Low: ${data.list[i].main.temp_min}&deg</h5>`;
+                    html += `<img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">`
                     html += `<h5>Description: ${data.list[i].weather[0].description}</h5>`;
                     html += `<h5>Humidity: ${data.list[i].main.humidity} %</h5>`;
                     html += `<h5>Wind: ${data.list[i].wind.speed} MPH</h5>`;
