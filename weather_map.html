@@ -36,19 +36,6 @@
 
 <script>
 
-    createMapKey = mapKey
-    mapboxgl.accessToken = createMapKey;
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v12',
-        center: [-98.4946, 29.4252],
-        zoom: 9,
-    });
-
-    const marker = new mapboxgl.Marker();
-    marker.setLngLat([-98.4946, 29.4252]);
-    marker.addTo(map);
-
     function geoCodeBuilder(searchString) {
 
         // Mapbox code goes below not weather key
@@ -82,13 +69,35 @@
         })
     }
 
+    <!--    Create Map   -->
+    mapboxgl.accessToken = mapKey;
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v12',
+        center: [-98.4946, 29.4252],
+        zoom: 9,
+    });
+
+    // Create marker... return draggable true for marker to be movable
+    const marker = new mapboxgl.Marker({
+        draggable: true
+    });
+    marker.setLngLat([-98.4946, 29.4252]);
+    marker.addTo(map);
+
+
+    marker.on('dragend', function (e){
+        let lonLat = e.target._lngLat;
+        reverseGeocode({lat: lonLat.lat, lng:lonLat.lng}, mapKey).then(function(results){
+            console.log(results)
+        })
+    })
 //     Calling to display list
 geoCodeBuilder("San Antonio, TX");
 
 
 // BELOW: Comment was used to pull up JSON file
 // console.log(`http://api.openweathermap.org/data/2.5/weather?lat=${29.4252}&lon=${-98.4946}&appid=${weatherKey}&units=imperial`);
-//     BELOW: Is the information for each card describing the weather displaying on the HTML
 
 
 </script>
