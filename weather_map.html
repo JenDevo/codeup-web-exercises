@@ -45,6 +45,10 @@
         zoom: 9,
     });
 
+    const marker = new mapboxgl.Marker();
+    marker.setLngLat([-98.4946, 29.4252]);
+    marker.addTo(map);
+
     function geoCodeBuilder(searchString) {
 
         // Mapbox code goes below not weather key
