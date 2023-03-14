@@ -16,6 +16,10 @@
 
     <h2>Weather</h2>
 
+<!--   Search Bar   -->
+       <input type="text" placeholder="Search for Weather" id="searchInput"> <button id="myBtn">Click to Search</button>
+
+
 <!--  Weather Forecast  -->
     <div id="weatherBody"></div>
 
@@ -41,6 +45,14 @@
         // Mapbox code goes below not weather key
 
         geocode(searchString, mapKey).then(function (results) {
+            // BELOW: Calls back previous marker to move when searched.
+            let myOptionsObj = {
+                center: results,
+                zoom: 13
+            };
+            map.flyTo(myOptionsObj);
+            marker.setLngLat(results)
+
 
             $.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${results[1]}&lon=${results[0]}&appid=${weatherKey}&units=imperial`).done(function (data){
 
@@ -120,15 +132,14 @@
             })
         })
     })
+
+    $("#myBtn").click(function(e){
+        e.preventDefault()
+        geoCodeBuilder($("#searchInput").val())
+    })
+
 //     Calling to display list
 geoCodeBuilder("San Antonio, TX");
 
-
-// BELOW: Comment was used to pull up JSON file
-// console.log(`http://api.openweathermap.org/data/2.5/weather?lat=${29.4252}&lon=${-98.4946}&appid=${weatherKey}&units=imperial`);
-
-
 </script>
-
-
 </html>
