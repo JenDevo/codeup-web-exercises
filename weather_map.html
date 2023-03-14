@@ -16,43 +16,61 @@
 
     <h2>Weather</h2>
 
-    <div id="weatherBody">
+<!--  Weather Forecast  -->
+    <div id="weatherBody"></div>
 
-    </div>
+<!--  Map  -->
+    <div id='map' style='width: auto; height: 200px;'></div>
+
 </body>
 
 <!--BELOW: jQuery CDN-->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
-<!--JS keys with gitignore on this file-->
-<script src="js/keys.js" ></script>
-
 <!--BELOW: Mapbox geocoder-->
 <script src="js/mapbox-geocoder-utils.js"></script>
 
+<!--JS keys with gitignore on this file-->
+<script src="js/keys.js" ></script>
 
 <script>
+
+    createMapKey = mapKey
+    mapboxgl.accessToken = createMapKey;
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v12',
+        center: [-98.4946, 29.4252],
+        zoom: 9,
+    });
 
     function geoCodeBuilder(searchString) {
 
         // Mapbox code goes below not weather key
+
         geocode(searchString, mapKey).then(function (results) {
+
             $.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${results[1]}&lon=${results[0]}&appid=${weatherKey}&units=imperial`).done(function (data){
+
                 let html = "";
 
-                // console.log(data);
-                // console.log(data.list[0].dt_text);
-                // console.log(data.list[0]);
                 for (let i = 0; i <= 39; i += 8) {
 
                     html += `<h4>Date: ${data.list[i].dt_txt}</h4>`
+
                     html += `<h4>Current Location: ${data.city.name}</h4>`;
+
                     html += `<h5>High: ${data.list[i].main.temp_max}&deg / Low: ${data.list[i].main.temp_min}&deg</h5>`;
+
                     html += `<img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">`
+
                     html += `<h5>Description: ${data.list[i].weather[0].description}</h5>`;
+
                     html += `<h5>Humidity: ${data.list[i].main.humidity} %</h5>`;
+
                     html += `<h5>Wind: ${data.list[i].wind.speed} MPH</h5>`;
+
                     html += `<h5>Pressure: ${data.list[i].main.pressure}</h5>`;
                 }
                 $("#weatherBody").html(html);
@@ -62,6 +80,8 @@
 
 //     Calling to display list
 geoCodeBuilder("San Antonio, TX");
+
+
 // BELOW: Comment was used to pull up JSON file
 // console.log(`http://api.openweathermap.org/data/2.5/weather?lat=${29.4252}&lon=${-98.4946}&appid=${weatherKey}&units=imperial`);
 //     BELOW: Is the information for each card describing the weather displaying on the HTML
