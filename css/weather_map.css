@@ -5,6 +5,7 @@
     height: 300px;
     word-wrap: break-word;
     border: 1px solid black;
+    display: inline-block;
 }
 
 .date-header {
