@@ -19,21 +19,21 @@
 </head>
 <body>
 
-    <div class="bg-primary text-white d-flex justify-content-between fs-3 align-items-end" >Weather App
+    <div class="bg-primary text-white d-flex justify-content-between fs-3 align-items-center" >Weather App
         <span id="currentCity" class="mx-1" ></span>
     </div>
 
 
 <!--   Search Bar   -->
     <div class="p-2 my-2" >
-       <span>Place </span> <input type="text" placeholder="San Antonio, TX" id="searchInput"> <button id="myBtn" class="btn btn-primary btn-sm" >Find</button>
+       <span class="text-muted" >Place </span> <input type="text" placeholder="San Antonio, TX" id="searchInput" class="rounded"> <button id="myBtn" class="btn btn-primary btn-sm" >Find</button>
     </div>
 
 <!--  Weather Forecast  -->
     <div id="weatherBody"></div>
 
 <!--  Map  -->
-    <div id='map' style='width: auto; height: 350px;' ></div>
+    <div id='map' style='width: auto; height: 350px;'></div>
 
 </body>
 

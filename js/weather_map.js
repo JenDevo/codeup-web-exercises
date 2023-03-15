@@ -14,14 +14,13 @@ function geoCodeBuilder(searchString) {
         marker.setLngLat(results)
 
         // Get information from open weather API
-        $.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${results[1]}&lon=${results[0]}&appid=${weatherKey}&units=imperial`).done(function (data){
+        $.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${results[1]}&lon=${results[0]}&appid=${weatherKey}&units=imperial`).done(function (data) {
 
             let html = "<div class='row d-flex justify-content-between'>";
 
             for (let i = 0; i <= 39; i += 8) {
 
                 html += `<div class="card-decor col-2"><div class="date-header" ><p>${data.list[i].dt_txt}</p></div>`
-
 
                 html += `<div class="d-flex justify-content-center" >`
 
@@ -35,21 +34,20 @@ function geoCodeBuilder(searchString) {
 
                 html += `</div>`
 
+                html += `<div class="border" >Description: <strong>${data.list[i].weather[0].description}</strong></div>`;
 
-                html += `<br><span>Description: <strong>${data.list[i].weather[0].description}</strong></span><br>`;
+                html += `<div class="border" >Humidity: <strong>${data.list[i].main.humidity} %</strong></div>`;
 
-                html += `<span>Humidity: <strong>${data.list[i].main.humidity} %</strong></span><br>`;
+                html += `<div class="border" >Wind: <strong>${data.list[i].wind.speed} MPH</strong></div>`;
 
-                html += `<span>Wind: <strong>${data.list[i].wind.speed} MPH</strong></span><br>`;
-
-                html += `<span>Pressure: <strong>${data.list[i].main.pressure}</strong></span></div>`;
+                html += `<div>Pressure: <strong>${data.list[i].main.pressure}</strong></div></div>`;
 
             }
             html += "</div>"
             $("#weatherBody").html(html);
 
             // BELOW: Top right corner where city is displayed
-            let city ="";
+            let city = "";
             city += `<h6>Current Location: ${data.city.name}</h6>`;
             $("#currentCity").html(city)
         })
@@ -60,7 +58,7 @@ function geoCodeBuilder(searchString) {
 mapboxgl.accessToken = mapKey;
 const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v12',
+    style: 'mapbox://styles/mapbox/outdoors-v12',
     center: [-98.4946, 29.4252],
     zoom: 9,
 });
@@ -73,9 +71,9 @@ marker.setLngLat([-98.4946, 29.4252]);
 marker.addTo(map);
 
 
-marker.on('dragend', function (e){
+marker.on('dragend', function (e) {
     let lonLat = e.target._lngLat;
-    reverseGeocode({lat: lonLat.lat, lng:lonLat.lng}, mapKey).then(function(results){
+    reverseGeocode({lat: lonLat.lat, lng: lonLat.lng}, mapKey).then(function (results) {
         console.log(results)
 
         geocode(results, mapKey).then(function (results) {
@@ -87,32 +85,41 @@ marker.on('dragend', function (e){
             map.flyTo(myOptionsObj);
             marker.setLngLat(results)
 
-            $.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${results[1]}&lon=${results[0]}&appid=${weatherKey}&units=imperial`).done(function (data){
+            $.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${results[1]}&lon=${results[0]}&appid=${weatherKey}&units=imperial`).done(function (data) {
 
-                let html = "<div class='row d-flex justify-content-evenly'>";
+                let html = "<div class='row d-flex justify-content-between'>";
 
                 for (let i = 0; i <= 39; i += 8) {
 
                     html += `<div class="card-decor col-2"><div class="date-header" ><p>${data.list[i].dt_txt}</p></div>`
 
+                    html += `<div class="d-flex justify-content-center" >`
+
                     html += `<h6 class="" >High: ${data.list[i].main.temp_max}&deg / Low: ${data.list[i].main.temp_min}&deg</h6>`;
+
+                    html += `</div>`
+
+                    html += `<div class="d-flex justify-content-center" >`
 
                     html += `<img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png" class="align-content-center" >`
 
-                    html += `<br><span>Description: ${data.list[i].weather[0].description}</span><br>`;
+                    html += `</div>`
 
-                    html += `<span>Humidity: ${data.list[i].main.humidity} %</span><br>`;
+                    html += `<span>Description: <strong>${data.list[i].weather[0].description}</strong></span>`;
 
-                    html += `<span>Wind: ${data.list[i].wind.speed} MPH</span><br>`;
 
-                    html += `<span>Pressure: ${data.list[i].main.pressure}</span></div>`;
+                    html += `<span>Humidity: <strong>${data.list[i].main.humidity} %</strong></span>`;
+
+                    html += `<span>Wind: <strong>${data.list[i].wind.speed} MPH</strong></span>`;
+
+                    html += `<span>Pressure: <strong>${data.list[i].main.pressure}</strong></span></div>`;
 
                 }
                 html += "</div>"
                 $("#weatherBody").html(html);
 
                 // BELOW: Top right corner where city is displayed
-                let city ="";
+                let city = "";
                 city += `<h6>Current Location: ${data.city.name}</h6>`;
                 $("#currentCity").html(city)
             })
@@ -121,7 +128,7 @@ marker.on('dragend', function (e){
 })
 
 // BELOW: Button for search bar functionality
-$("#myBtn").click(function(e){
+$("#myBtn").click(function (e) {
     e.preventDefault()
     geoCodeBuilder($("#searchInput").val())
 })
