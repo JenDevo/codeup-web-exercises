@@ -45,7 +45,7 @@ function geoCodeBuilder(searchString) {
             }
             html += "</div>"
             $("#weatherBody").html(html);
-
+            console.log(`http://api.openweathermap.org/data/2.5/forecast?lat=${results[1]}&lon=${results[0]}&appid=${weatherKey}&units=imperial`)
             // BELOW: Top right corner where city is displayed
             let city = "";
             city += `<h6>Current Location: ${data.city.name}</h6>`;
