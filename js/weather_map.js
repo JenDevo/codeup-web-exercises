@@ -20,21 +20,22 @@ function geoCodeBuilder(searchString) {
 
             for (let i = 0; i <= 39; i += 8) {
 
-                html += `<h4>Date: ${data.list[i].dt_txt}</h4>`
-
-                html += `<h4>Current Location: ${data.city.name}</h4>`;
+                html += `<div class="row" ><div class="card-decor col-2"><div class="date-header" ><p>${data.list[i].dt_txt}</p></div>`
 
                 html += `<h5>High: ${data.list[i].main.temp_max}&deg / Low: ${data.list[i].main.temp_min}&deg</h5>`;
 
                 html += `<img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">`
 
-                html += `<h5>Description: ${data.list[i].weather[0].description}</h5>`;
+                html += `<p>Description: ${data.list[i].weather[0].description}</p>`;
 
-                html += `<h5>Humidity: ${data.list[i].main.humidity} %</h5>`;
+                html += `<p>Humidity: ${data.list[i].main.humidity} %</p>`;
 
-                html += `<h5>Wind: ${data.list[i].wind.speed} MPH</h5>`;
+                html += `<p>Wind: ${data.list[i].wind.speed} MPH</p>`;
 
-                html += `<h5>Pressure: ${data.list[i].main.pressure}</h5>`;
+                html += `<p>Pressure: ${data.list[i].main.pressure}</p></div></div>`;
+
+
+
             }
             $("#weatherBody").html(html);
         })

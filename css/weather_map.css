@@ -1,0 +1,14 @@
+.card-decor{
+    padding: 0;
+    margin: 1em;
+    width: 250px;
+    height: 300px;
+    word-wrap: break-word;
+    border: 1px solid black;
+}
+
+.date-header {
+    background: lightgrey;
+    border: 1px solid grey;
+    padding: 0;
+}
