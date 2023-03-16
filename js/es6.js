@@ -38,9 +38,9 @@ const name = 'jenna';
 const email = 'jdevora3@gmail.com';
 const languages = ['javascript', 'html', 'css'];
 
-console.log(name);
-console.log(email);
-console.log(languages);
+// console.log(name);
+// console.log(email);
+// console.log(languages);
 
 // TODO: rewrite the object literal using object property shorthand
 users.push({
@@ -58,33 +58,40 @@ let names = [];
 // TODO: rewrite the following using arrow functions
 users.forEach((user) => {
   emails.push(user.email);
-  console.log(emails);
+  // console.log(emails);
 });
 //OUTPUT: ['zach@codeup.com', 'ryan@codeup.com', 'luis@codeup.com', 'fernando@codeup.com', 'justin@codeup.com', 'jdevora3@gmail.com']
 
 users.forEach((user) => {
   names.push(user.name);
-  console.log(names);
+  // console.log(names);
 });
 // OUTPUT: ['zach', 'ryan', 'luis', 'fernando', 'justin', 'jenna']
 
 
 // TODO: replace `var` with `let` in the following declaration
-var developers = [];
+let developers = [];
 users.forEach(function(user) {
   // TODO: rewrite the code below to use object destructuring assignment
   //       note that you can also use destructuring assignment in the function
   //       parameter definition
-  const name = user.name;
-  const email = user.email;
-  const languages = user.languages;
+
+  const {name, email, languages} = user
+  //ABOVE: same as below
+  // const name = user.name;
+  // const email = user.email;
+  // const languages = user.languages;
+console.log(user);
 
   // TODO: rewrite the assignment below to use template strings
-  developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
+  // developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
+  developers.push(`${name}'s email is ${email}, ${name} knows ${languages.join(', ')} `);
+
 });
 
+console.log(developers);
 // TODO: Use `let` for the following variable
-var list = '<ul>';
+let list = '<ul>';
 
 // TODO: rewrite the following loop to use a for..of loop
 developers.forEach(function (developer) {
