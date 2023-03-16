@@ -49,19 +49,25 @@ users.push({
   languages
 });
 
-console.log(users);
+// console.log(users);
 
 // TODO: replace `var` with `let` in the following variable declarations
-var emails = [];
-var names = [];
+let emails = [];
+let names = [];
 
 // TODO: rewrite the following using arrow functions
-users.forEach(function(user) {
-  return emails.push(user.email);
+users.forEach((user) => {
+  emails.push(user.email);
+  console.log(emails);
 });
-users.forEach(function(user) {
-  return names.push(user.name);
+//OUTPUT: ['zach@codeup.com', 'ryan@codeup.com', 'luis@codeup.com', 'fernando@codeup.com', 'justin@codeup.com', 'jdevora3@gmail.com']
+
+users.forEach((user) => {
+  names.push(user.name);
+  console.log(names);
 });
+// OUTPUT: ['zach', 'ryan', 'luis', 'fernando', 'justin', 'jenna']
+
 
 // TODO: replace `var` with `let` in the following declaration
 var developers = [];
