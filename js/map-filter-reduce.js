@@ -95,3 +95,7 @@ console.log(longestEmail);
 //Using reduce, get list of user's names in single string
 //Example: Your instructors are: name, name, name, name
 
+let instructorList = users.reduce(function (stringAccum, person){
+    return stringAccum + person.name.toUpperCase() + "|";
+}, `List of Instructors:`)
+console.log(instructorList);
