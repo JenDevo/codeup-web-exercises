@@ -39,8 +39,7 @@ const users = [
 ];
 console.log(users);
 
-
-
+// #2
 // Using filter to create array of user objects with languages
 // had issues with this at first because I wasn't using .length to target the language array
 let moreThanThreeLangArray = users.filter(function (user) {
@@ -49,7 +48,50 @@ let moreThanThreeLangArray = users.filter(function (user) {
 
 console.log(moreThanThreeLangArray);
 
+//#3
+// Using map, create array of strings where each element is a users email address
+//[strings of user emails]
+
+let userEmails = users.map(function (user){
+    return users.email = user.email.toString()
+});
+
+console.log(userEmails);
+
+//#4
+//Using reduce, get total years of experience from users, then calculate average amount of years
+
+// let yearsArr = users.map(function (user){
+//     return users.yearsOfExperience = user.yearsOfExperience
+// });
+// console.log(yearsArr);
+//
+// let totalYears = yearsArr.reduce(function (accumulator, number){
+//     return (accumulator + number) / 5
+// });
 
 
+//Below: doesn't give average but think this is what was expected, average is in commented out code above
+let totalYears = users.reduce(function (years, user){
+    return years + user.yearsOfExperience;
+}, 0)
 
+console.log(`The average years worked amounts to: ${totalYears} years`);
+
+//#5
+//using reduce, get the longest email from the list of users
+
+let longestEmail = users.reduce(function(longest, user){
+    if (user.email.length > longest.length){
+        return user.email;
+    } else {
+        return longest
+    }
+}, "")
+
+console.log(longestEmail);
+
+//#6
+//Using reduce, get list of user's names in single string
+//Example: Your instructors are: name, name, name, name
 
