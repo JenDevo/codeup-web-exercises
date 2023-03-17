@@ -1,3 +1,5 @@
+"use strict";
+
 const users = [
     {
         id: 1,
@@ -35,6 +37,19 @@ const users = [
         yearsOfExperience: 9
     }
 ];
-
-
 console.log(users);
+
+
+
+// Using filter to create array of user objects with languages
+// had issues with this at first because I wasn't using .length to target the language array
+let moreThanThreeLangArray = users.filter(function (user) {
+   return user.languages.length >= 3
+});
+
+console.log(moreThanThreeLangArray);
+
+
+
+
+
