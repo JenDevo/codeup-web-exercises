@@ -98,7 +98,7 @@ for (let developer of developers) {
 
   // TODO: rewrite the assignment below to use template strings
   list += `<li> ${developer} </li>`;
-
+  console.log(developer)
 }
 list += `</ul>`
 
